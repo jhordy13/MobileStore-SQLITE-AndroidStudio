@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.delaguila.mobilestore_v2.MainActivity">
+    tools:context="com.delaguila.mobilestore_v2.MainActivity"
+    android:background="@drawable/madera">
 
     <LinearLayout
         android:orientation="vertical"
@@ -21,28 +22,36 @@
             android:text="Agregar Producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnAgregarProducto" />
+            android:id="@+id/btnAgregarProducto"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <TextView
             android:text="Buscar Producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView" />
+            android:id="@+id/textView"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/txtNombreProducto"
+            android:id="@+id/tvNombreProducto"
             android:hint="Ingresar Nombre"
-            android:textColorLink="?attr/actionModeSplitBackground" />
+            android:textColor="@android:color/white"
+            android:textColorHint="#FFFFFF"
+            android:textSize="16sp" />
 
         <Button
             android:text="Buscar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnBuscar" />
+            android:id="@+id/btnBuscar"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -50,21 +59,24 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="1"
-                android:textSize="17sp" />
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:text="Nombre" />
 
             <TextView
-                android:text="Precio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
                 android:layout_weight="0.20"
-                android:textSize="17sp" />
+                android:gravity="right"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:text="Precio" />
         </LinearLayout>
 
         <ListView

@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import basedatos.SQLControlador;
+import utilitarios.Mensaje;
 
 public class AgregarProducto extends AppCompatActivity {
 
@@ -36,16 +37,20 @@ public class AgregarProducto extends AppCompatActivity {
             public void onClick(View view) {
                 String nombre = txtNombre.getText().toString();
                 String precio = txtPrecio.getText().toString();
-                long registros_exitoso = controlador.insertarDatos(nombre,precio);
-                if (registros_exitoso != -1) {
-                    Toast toast = Toast.makeText(getApplicationContext(),"Exito",Toast.LENGTH_SHORT);
-                    toast.show();
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
+
+                if (!nombre.isEmpty() && !precio.isEmpty()) {
+                    double precio_convertido = Double.parseDouble(precio);
+                    long registros_exitoso = controlador.insertarDatos(nombre,precio_convertido);
+                    if (registros_exitoso != -1) {
+                        Mensaje.mostrarMensajeCorto(view.getContext(),"Exito al guardar.");
+                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT);
-                    toast.show();
+                    Mensaje.mostrarMensajeCorto(view.getContext(),"Ingresar NOMBRE Y PRECIO");
                 }
+
             }
         });
     }

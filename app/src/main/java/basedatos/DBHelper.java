@@ -23,13 +23,12 @@ public class DBHelper extends SQLiteOpenHelper {
             + TABLE_PRODUCTO + "(" + PRODUCTO_ID
             + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + PRODUCTO_NOMBRE + " TEXT NOT NULL, " +
-              PRODUCTO_PRECIO + " TEXT NOT NULL );";
+              PRODUCTO_PRECIO + " REAL NOT NULL )";
 
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null,DB_VERSION);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {

@@ -63,17 +63,6 @@ public class ProductoAdapter extends BaseAdapter{
         TextView precio = (TextView) vi.findViewById(R.id.tvPrecio);
         precio.setText(producto.getPrecio());
 
-//        for (Producto producto: productos) {
-//            TextView produtoid = (TextView) vi.findViewById(R.id.tvProductoid);
-//            produtoid.setText(Long.toString(producto.getProductoid()));
-//
-//            TextView nombre = (TextView) vi.findViewById(R.id.tvNombre);
-//            nombre.setText(producto.getNombre());
-//
-//            TextView precio = (TextView) vi.findViewById(R.id.tvPrecio);
-//            precio.setText(producto.getPrecio());
-//        }
-
         return vi;
     }
 }

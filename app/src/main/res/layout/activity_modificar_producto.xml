@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_modificar_producto"
     android:layout_width="match_parent"
@@ -8,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.delaguila.mobilestore_v2.ModificarProducto">
+    tools:context="com.delaguila.mobilestore_v2.ModificarProducto"
+    android:background="@android:color/black">
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,37 +20,44 @@
         android:layout_alignParentStart="true">
 
         <TextView
-            android:text="Modificar Datos del ProdcutoModificar Datos del Prodcuto"
+            android:text="Modificar Datos del Producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvN" />
+            android:id="@+id/tvN"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText"
-            android:hint="Ingresar Nombre" />
+            android:id="@+id/etNombre"
+            android:hint="Ingresar Nombre"
+            android:textColor="@android:color/white" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
-            android:id="@+id/editText2"
-            android:hint="Ingresar Precio" />
+            android:id="@+id/etPrecio"
+            android:hint="Ingresar Precio"
+            android:textColor="@android:color/white" />
 
         <Button
             android:text="Modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnModificar" />
+            android:id="@+id/btnModificar"
+            android:textSize="18sp" />
 
         <Button
             android:text="Eliminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnEliminar" />
+            android:id="@+id/btnEliminar"
+            android:textSize="18sp" />
+
     </LinearLayout>
 </RelativeLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_agregar_producto"
     android:layout_width="match_parent"
@@ -8,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.delaguila.mobilestore_v2.AgregarProducto">
+    tools:context="com.delaguila.mobilestore_v2.AgregarProducto"
+    android:background="@android:color/black">
 
     <LinearLayout
         android:orientation="vertical"
@@ -21,7 +23,9 @@
             android:text="Ingresar datos del producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2" />
+            android:id="@+id/textView2"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -29,7 +33,9 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/txtNombre"
-            android:hint="Ingresar Nombre" />
+            android:hint="Ingresar Nombre"
+            android:textColorHint="#FFFFFF"
+            android:textColor="@android:color/background_light" />
 
         <EditText
             android:layout_width="match_parent"
@@ -37,13 +43,22 @@
             android:inputType="numberDecimal"
             android:ems="10"
             android:id="@+id/txtPrecio"
-            android:hint="Ingresar Precio" />
+            android:hint="Ingresar Precio"
+            android:textColorHint="#FFFFFF"
+            android:textColor="@android:color/background_light" />
 
         <Button
             android:text="Guardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGuardar" />
+            android:id="@+id/btnGuardar"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/productotienda1037_692"
+            android:id="@+id/imageView" />
 
     </LinearLayout>
 </RelativeLayout>

@@ -30,7 +30,7 @@ public class SQLControlador {
         dbhelper.close();
     }
 
-    public long insertarDatos(String name, String precio) {
+    public long insertarDatos(String name, double precio) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DBHelper.PRODUCTO_NOMBRE, name);
         contentValues.put(DBHelper.PRODUCTO_PRECIO, precio);
@@ -43,11 +43,12 @@ public class SQLControlador {
         return cursor;
     }
 
-    public int actualizarDatos(long productoID, String newNombre, String newPrecio) {
+    public int actualizarDatos(long productoID, String newNombre, double newPrecio) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DBHelper.PRODUCTO_NOMBRE, newNombre);
         contentValues.put(DBHelper.PRODUCTO_PRECIO, newPrecio);
-        int i = database.update(DBHelper.TABLE_PRODUCTO, contentValues,
+        int i = database.update(
+                DBHelper.TABLE_PRODUCTO, contentValues,
                 DBHelper.PRODUCTO_ID + " = " + productoID, null);
         return i;
     }
@@ -55,6 +56,21 @@ public class SQLControlador {
     public void deleteData(long productoID) {
         database.delete(DBHelper.TABLE_PRODUCTO, DBHelper.PRODUCTO_ID + "="
                 + productoID, null);
+    }
+
+    public Cursor buscarProducto(String nombre) {
+        String columnas[] = {DBHelper.PRODUCTO_ID,DBHelper.PRODUCTO_NOMBRE,DBHelper.PRODUCTO_PRECIO};
+        String seleccion = DBHelper.PRODUCTO_NOMBRE + " LIKE ? ";
+        String selectionArgs[] = new String[] {"%" + nombre + "%"};
+        //String selectionArgs[] ={nombre};
+        Cursor cursor = database.query(
+                DBHelper.TABLE_PRODUCTO,columnas,seleccion,selectionArgs,null,null,null);
+
+        //metodo 2
+/*        Cursor cursor = database.rawQuery(" SELECT * FROM "
+                + DBHelper.TABLE_PRODUCTO
+                + " WHERE " + DBHelper.PRODUCTO_NOMBRE + " LIKE '%" + nombre + "%'", null);*/
+        return cursor;
     }
 
 
